@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>IssueBuddy · Find your first open-source PR in 60 seconds</title>
+<meta name="description" content="Pick your skills, paste a GitHub repo, and get beginner issues ranked by Google Gemma 4 with a step-by-step contribution plan.">
+<meta name="theme-color" content="#0b1020">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧭</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3.10.0/notyf.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#form">Skip to search</a>
+<header class="hero">
+  <div class="brand"><i data-lucide="compass" aria-hidden="true"></i> IssueBuddy</div>
+  <a class="badge" href="https://ai.google.dev/gemma" target="_blank" rel="noopener" title="AI runs on Google Gemma 4 (open-weight) via the Gemini API"><i data-lucide="sparkles" aria-hidden="true"></i> Powered by Gemma 4</a>
+  <h1>Find your first open-source PR <br>in <span class="grad">60 seconds</span></h1>
+  <p class="sub">Pick your skills, paste a GitHub repo, and let open-weight Google Gemma 4 rank beginner-friendly issues and plan your contribution.</p>
+  <ol class="how" aria-label="How it works">
+    <li><span class="hi"><i data-lucide="sliders-horizontal" aria-hidden="true"></i></span><div><b>Pick skills</b><small>What you know today</small></div></li>
+    <li><span class="hi"><i data-lucide="github" aria-hidden="true"></i></span><div><b>Choose repo</b><small>Any public GitHub repo</small></div></li>
+    <li><span class="hi"><i data-lucide="map" aria-hidden="true"></i></span><div><b>Get a plan</b><small>Branch, commit &amp; PR text</small></div></li>
+  </ol>
+</header>
+<main>
+  <section class="card" id="form" aria-label="Search for issues">
+    <h2><span class="num">1</span> Your skills</h2>
+    <div id="chips" class="chips" role="group" aria-label="Your skills"></div>
+    <h2><span class="num">2</span> A GitHub repo</h2>
+    <form class="row" id="searchForm" onsubmit="return false">
+      <label class="field"><i data-lucide="search" aria-hidden="true"></i><input id="repo" placeholder="https://github.com/owner/repo or owner/repo" autocomplete="off" aria-label="GitHub repository"></label>
+      <button id="go" class="primary" type="submit" aria-label="Find beginner issues"><span>Find issues</span> <i data-lucide="arrow-right" aria-hidden="true"></i></button>
+    </form>
+    <div class="samples">Try: <span id="samples"></span></div>
+    <p id="status" class="status" role="status" aria-live="polite"></p>
+  </section>
+  <section id="results" aria-live="polite"></section>
+</main>
+<footer>Built at MLH Hacktoberfest Hack Day Prayagraj × WikiClub Tech UIT · AI by <code>Google Gemma 4</code> (open-weight) via the Gemini API · Issues via GitHub public API</footer>
+<div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="planTitle"><div class="sheet"><button class="close" id="close" aria-label="Close plan"><i data-lucide="x" aria-hidden="true"></i></button><div id="modalBody"></div></div></div>
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.453.0/dist/umd/lucide.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/notyf@3.10.0/notyf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
