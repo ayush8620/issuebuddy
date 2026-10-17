@@ -1,1 +1,0 @@
-kills/issuebuddy/SKILL.mdx
